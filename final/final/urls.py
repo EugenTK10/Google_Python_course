@@ -1,4 +1,4 @@
-"""proiect URL Configuration
+"""final URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -14,14 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.contrib.auth.views import LoginView
 from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('location/', include('location.urls')),
-    path('', include('django.contrib.auth.urls'), {'next_page': '/'}, name='login'),
-    path('', LoginView.as_view(template_name= 'registration/login.html'), name='login'),
-    path('profile/', include('pontaj.urls')),
-    path('user_profile', include('userprofile.urls')),
+    path('', include('joburi.urls')),
 ]
